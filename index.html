@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bibek Lamsal Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            width: 100%;
+            height: 100%;
+            font-family: 'Poppins', sans-serif;
+            color: #333333;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        header {
+            
+            background-color: #004C8C;
+            color: #FFFFFF;
+            padding: 100px 0;
+            text-align: center;
+            border-bottom: 5px solid #00A0E8;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        header h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            animation: slideInFromLeft 2s ease-in-out;
+        }
+
+        header p {
+            font-size: 1.5rem;
+            font-weight: 400;
+            animation: slideInFromRight 2s ease-in-out;
+        }
+
+        .profile-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            margin-top: -60px;
+            margin-bottom: 30px;
+            animation: slideUp 2s ease-in-out;
+        }
+
+        .profile-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 5px solid #FFFFFF;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            animation: rotateIn 2s ease-in-out;
+        }
+        @media (max-width: 768px) {
+            header {
+                padding: 30px 15px; /* Reduce padding */
+                text-align: center; /* Center align content */
+            }
+        
+            header h1 {
+                font-size: 2rem; /* Adjust heading size */
+                line-height: 1.2;
+            }
+        
+            header p {
+                font-size: 1rem; /* Make paragraph text smaller */
+                margin-top: 10px;
+            }
+        
+            .profile-container {
+                display: flex;
+                flex-direction: column; /* Stack items vertically */
+                align-items: center;
+                justify-content: center;
+                gap: 10px; /* Reduce gap */
+                text-align: center;
+            }
+        
+            .profile-image {
+                width: 100px; /* Make profile image smaller */
+                height: 100px;
+                border-radius: 50%;
+            }
+        }
+        
+
+        .profile-text {
+            color: #FFFFFF;
+        }
+
+        .card {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: slideUp 1.5s ease-in-out;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-body {
+            padding: 25px;
+            color: #004C8C;
+        }
+
+        .card-header {
+            background: #00A0E8;
+            color: #FFFFFF;
+            font-size: 1.5rem;
+            font-weight: 600;
+            text-align: center;
+            padding: 15px;
+            border-bottom: 2px solid #0066CC;
+        }
+
+        .btn-custom {
+            background: #0066CC;
+            color: #FFFFFF;
+            padding: 12px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-custom:hover {
+            background: #00A0E8;
+            color: #FFFFFF;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #004C8C;
+            color: #FFFFFF;
+            margin-top: 40px;
+            border-top: 5px solid #00A0E8;
+            animation: slideUp 2s ease-in-out;
+        }
+
+        .badge {
+            font-size: 1rem;
+            margin-top: 2px;
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-weight: 500;
+            background-color: #00A0E8;
+            color: #FFFFFF;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .badge:hover {
+            background-color: #0066CC;
+            transform: scale(1.1);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 600;
+            text-align: center;
+            color: #0066CC;
+            margin-bottom: 30px;
+            animation: slideUp 1.5s ease-in-out;
+        }
+
+        .tag {
+            margin-right: 10px;
+            margin-bottom: 5px;
+        }
+
+        .about-section, .experience-section, .skills-section, .projects-section, .contact-section {
+            margin-top: 30px;
+        }
+
+        /* Slide-in animations */
+        @keyframes slideInFromLeft {
+            0% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInFromRight {
+            0% {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            0% {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes rotateIn {
+            0% {
+                transform: rotate(-360deg);
+                opacity: 0;
+            }
+            100% {
+                transform: rotate(0deg);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .container {
+            padding: 50px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .section {
+            background-color: #F4F9FC;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-card {
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            margin: 15px 0;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .project-card:hover {
+            transform: scale(1.05);
+        }
+
+        .project-header {
+            background: #00A0E8;
+            color: #FFFFFF;
+            padding: 15px;
+            font-weight: 600;
+            text-align: center;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+        }
+
+        .project-body {
+            padding: 20px;
+            color: #004C8C;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="profile-container">
+        <img src="profile_pic.jpg" alt="Bibek Lamsal" class="profile-image">
+        <div class="profile-text">
+            <h1>Bibek Lamsal</h1>
+            <p>Data Analyst Intern At Musimorph | Ex. Software Engineer</p>
+        </div>
+    </div>
+    <p style="font-size: 1.2rem; font-weight: 400;">Data-driven problem solver with a passion for turning complex data into strategic insights.</p>
+</header>
+
+<div class="container">
+    <section class="section about-section">
+        <h2 class="section-title">About Me</h2>
+        <p>I am currently working as a data analyst Intern at Musimorph and part time carsales person at CarGalleria. I have 2
+            years of experence as a Software Engineer where I have worked with complex data sets throughout and transformed
+            them into actionable insights, especially in health care. One of the most memorable events in my career was the
+            development of GUIs and applications that automated Excel tasks, saving up to 95% of time. It was an award-winning
+            piece of work.</p>
+        <p>My expertise in Python, SQL, Power BI, and Excel allows me to uncover trends, streamline operations, and help organizations make smarter, faster decisions.</p>
+        <div>
+            <span class="badge">Python</span>
+            <span class="badge">SQL</span>
+            <span class="badge">Power BI</span>
+            <span class="badge">Excel</span>
+        </div>
+
+    </section>
+    <section class="section skills-section">
+        <h2 class="section-title">Skillsets</h2>
+        <div class="row text-center">
+            <div class="col-md-3">
+                <div class="card p-3">
+                    <h3>Data Analysis</h3>
+                    <p>Expertise in handling complex datasets and extracting actionable insights.</p>
+                    <span class="badge">Python</span>
+                    <span class="badge">Microsoft Excel</span>
+                    <span class="badge">SQL</span>
+                    <span class="badge">Power BI</span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card p-3">
+                    <h3>Machine Learning</h3>
+                    <p>Hands-on experience with building and deploying machine learning models for predictive analytics.</p>
+                    <span class="badge">Scikit-learn</span>
+                    <span class="badge">supervised</span>
+                    <span class="badge">unsupervised</span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card p-3">
+                    <h3>Excel & Power Query</h3>
+                    <p>Proficient in Excel and Power Query Editor for data transformation and analysis.</p>
+                    <span class="badge">Excel</span>
+                    <span class="badge">Power Query Editor</span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card p-3">
+                    <h3>Software Development</h3>
+                    <p>Proficient in creating custom automation tools and web applications that streamline workflows.</p>
+                    <span class="badge">Python</span>
+                    <span class="badge">Django</span>
+                </div>
+            </div>
+
+           
+        </div>
+    </section>
+    <section class="section experience-section">
+        <h2 class="section-title">Experience</h2>
+        <ul>
+            <li><strong>Data Analyst Intern at Musimorph, Sydney, Australia (11/2024 - Current)</strong> - I am currently working as a data analyst intern at Musimorph, analyzing data from 1,000 top companies to
+    benchmark R&D investments against industry standards, helping to generate more views and subscribers. My
+    role involves identifying trends, uncovering industry-specific benchmarks, and delivering actionable insights
+    to guide strategic decisions. This internship highlights my expertise in handling complex datasets and
+    transforming them into meaningful analyses using advanced tools and techniques.<br>💡 My work directly
+    contributes to shaping data-driven strategies for optimizine R&D spending and aligning investments with
+    industry best practices.</li><br>
+            
+            <li><strong>Part-time Salesman (10/2023-Current), Perth, Australia</strong> - With over a year of experience in the used car industry, I am passionate about bridging the gap between car
+                owners and buyers by offering solutions that prioritize Value for Money and Value for the Car. My approach
+                focuses on creating win-win opportunities by ensuring car owners receive the best possible returns while
+                helping customers find reliable, high-quality vehicles that fit their budgets and needs.
+                <br>💡 What I bring to the table:<br>
+                Expertise in evaluating vehicles to ensure optimal pricing and quality.
+                Strong customer relations and negotiation skills to close deals efficiently.
+                A commitment to transparency and integrity in every transaction.</li>
+            <br>
+            <li><strong>Software Engineer at Carelon (09/2021-08/2023), Hyderabad, India</strong> - Automated various manual tasks using python script saving over 1000 hours of manual effort each month on
+                multiple sources also developed user-friendly applications using various framework for reconciling data from automations aiming to deliver high-quality solutions that meet user needs.
+                <br>💡Here’s a snapshot of what I’ve done:<br>
+                <u>Project 1 : GUI Based Automation on Excel (2022-2023):</u>
+                Developed multiple tool on Excel operation such as extracting, merging, summarizing the data from the excel and on
+                   Completion macro sent completion mail. I used Python, Excel and Outlook and was Rewarded by the award based on
+                    the success of the project and the workload it reduced and efficiency.
+               <br><br>
+               <u>Project 2: End to End macro Automation and Data Analysis (2023):</u>
+               Collaborated closely with production team members to automate workflows, reducing manual effort and improving
+                efficiency of the data. Atomation scheduled macro monitoring like triggering, sending if any issue while running the
+                macro, as overall making the process smoother and execution of the each macro is assured. Which helps to clean
+                the inventory effectively for pended claims each day which is 20% to 30% higher compare to the previous technique.
+                Technologies used are Python, Database, Excel, Outlook.
+                
+            
+            
+            </li>
+        </ul>
+    </section>
+
+   
+    <section class="section projects-section">
+        <h2 class="section-title">Awards and Contributions (Projects)</h2>
+        <div class="project-card">
+            <div class="project-header">Car Dealer Management (02/2025)</div>
+            <div class="project-body">
+                <p>This application was created to streamline the tracking of vehicles from private sellers, manage MR Numbers, and ensure timely inspections, reducing missed opportunities and errors.</p>
+                <p><strong>Technology used:</strong> Python, Tkinter, SQLite</p>
+                <p><strong>Tool used:</strong> VS Code</p>
+                <span class="badge">Python</span>
+                <span class="badge">Tkinter</span>
+                <span class="badge">SQLite</span>
+
+            </div>
+        </div>
+
+
+        <div class="project-card">
+            <div class="project-header">Impact Award and GO ABOVE Awards at Carelon (02/2023)</div>
+            <div class="project-body">
+                <p>Automated the workflow of the macro execution which helped
+                    to save 5. hrs of time on weekly basis.</p>
+                <p><strong>Technology used:</strong> Python, Excel</p>
+                <p><strong>Tool used:</strong> VS Code</p>
+                <span class="badge">Python</span>
+                <span class="badge">Excel</span>
+                <span class="badge">Automation</span>
+                <span class="badge">Macro</span>
+                <span class="badge">Outlook</span>
+
+            </div>
+        </div>
+
+        
+        <div class="project-card">
+            <div class="project-header">Madras Scientific Research Foundation (02/2021)</div>
+            <div class="project-body">
+                <p>Contributed in a lot of research based on the machine learning (supervised,
+                    unsupervised) and it's use cases.</p>
+                <p><strong>Technology used:</strong> Python, Machine Learning</p>
+                <p><strong>Tool used:</strong> VS Code, Power Point </p>
+                <span class="badge">Python</span>
+                <span class="badge">Machine Learning</span>
+
+                
+            </div>
+        </div>
+        <div class="project-card">
+            <div class="project-header">StudentInfoApp (05/2020)</div>
+            <div class="project-body">
+                <p>Created mobile Application for the Campus which helps teachers, staff to get informations related to
+                    student like Dues,BackLogs,Attendance etc based on registration number.</p>
+                <p><strong>Technology used:</strong> Java, SQLite</p>
+                <p><strong>Tool used:</strong> Android Studio</p>
+                <span class="badge">Java</span>
+                <span class="badge">SQLite</span>
+            </div>
+        </div>
+    </section>
+
+
+
+   
+
+    <section class="section contact-section">
+        <h2 class="section-title">Profiles and Contacts</h2>
+        <p>If you would like to collaborate or discuss opportunities, feel free to reach out to me.</p>
+        <Address>Email: bibeklamsal387@gmail.com</Address>
+        <Address>Phone: +61 481 916 102</Address>
+        <Address>Location: Perth, Australia</Address><br>
+        <a href="https://github.com/bibeklamsa1" target="_blank" class="btn-custom">Github</a>
+        <a href="https://www.linkedin.com/in/bibek-lamsal-65323817b/" target="_blank" class="btn-custom
+        ">LinkedIn</a>
+        <a href="mailto:bibeklamsal387@gmail.com" class="btn-custom">Email Me</a>
+    </section>
+
+
+
+
+</div>
+
+<footer class="footer">
+    <p>&copy; 2025 Bibek Lamsal. All Rights Reserved.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
